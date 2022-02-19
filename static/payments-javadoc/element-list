@@ -1,0 +1,13 @@
+com.nftworlds.wallet
+com.nftworlds.wallet.api
+com.nftworlds.wallet.config
+com.nftworlds.wallet.contracts.nftworlds
+com.nftworlds.wallet.contracts.wrappers.common
+com.nftworlds.wallet.contracts.wrappers.ethereum
+com.nftworlds.wallet.contracts.wrappers.polygon
+com.nftworlds.wallet.event
+com.nftworlds.wallet.handlers
+com.nftworlds.wallet.listeners
+com.nftworlds.wallet.objects
+com.nftworlds.wallet.objects.payments
+com.nftworlds.wallet.rpcs

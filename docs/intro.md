@@ -13,8 +13,8 @@ NFT Worlds is a fully decentralized, fully customizable, community driven, play 
 ## What can I learn here?
 
 This site contains all the knowledge you need to develop amazing experiences on the NFT Worlds platform. We'll cover exciting topics including:
-- Attracting new players to your world by adding it to the [server router](#)
-- Building a robust in-game economy with the $WRLD token and the [$WRLD Payments API](#)
+- Attracting new players to your world by adding it to the [server router](/architecture/server-routing)
+- Building a robust in-game economy with the $WRLD token and the [$WRLD Payments API](/payments/wrld-payments-api)
 - Creating scalable experiences
 
 Be sure to check out the sample projects to easily get started with NFT Worlds' developer tools.
