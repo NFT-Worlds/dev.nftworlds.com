@@ -39,6 +39,14 @@ Open `pom.xml`. Add a new entry under `<dependencies>` like so:
 </dependencies>
 ```
 
+:::tip
+
+You can also use GitHub's Maven repository instead of manually including the jarfile. However, GitHub Packages requires authentication (even for public packages) which can be extremely inconvenient.
+
+We'll be uploading wrld-payments-api to a public repository ASAP to improve this experience.
+
+:::
+
 ## Reference
 
 Click on any header to go to the Javadocs for that class. 

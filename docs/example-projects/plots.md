@@ -6,8 +6,6 @@ sidebar_position: 1
 
 :::caution Coming soon!
 
-We're currently in the process of migrating to Docusaurus. Expect this page to be complete within a few hours!
-
-(last updated February 19th at 8:40 GMT)
+We're currently adding support for arbitrary payloads (beyond a reason) to the WRLD Payments API. Once that's complete a tutorial will be added here.
 
 :::
