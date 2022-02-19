@@ -47,7 +47,7 @@ WRLDPaymentsCommands.getPayments().getNFTPlayer(player).requestWRLD(
     25, Network.POLYGON, ExampleTransactionType.PLAYER_BUY_APPLE_FROM_WORLD.toString()
 );
 ```
-<a href="/payments-javadoc/com/nftworlds/wallet/objects/NFTPlayer.html#requestWRLD(double,com.nftworlds.wallet.objects.Network,java.lang.String)" target="_blank">Javadocs for this method</a>
+<a href="/payments-javadoc/com/nftworlds/wallet/objects/NFTPlayer.html" target="_blank">Javadocs for this example</a>
 
 ## Writing a transaction handler
 
