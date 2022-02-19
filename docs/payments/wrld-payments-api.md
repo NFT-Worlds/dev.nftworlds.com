@@ -43,16 +43,16 @@ Open `pom.xml`. Add a new entry under `<dependencies>` like so:
 
 Click on any header to go to the Javadocs for that class. 
 
-### [WalletAPI](/payments-javadoc/com/nftworlds/wallet/api/WalletAPI.html)
+### <a href="/payments-javadoc/com/nftworlds/wallet/api/WalletAPI.html" target="_blank">WalletAPI</a>
 This is the main class you should use when writing a plugin. Create an instance of it and reuse it across your plugin.
 
-### [NFTPlayer](/payments-javadoc/com/nftworlds/wallet/objects/NFTPlayer.html)
+### <a target="_blank" href="/payments-javadoc/com/nftworlds/wallet/objects/NFTPlayer.html">NFTPlayer</a>
 The class used throughout the WRLD Payments API to represent a player and their attached wallets.
 
-### [PlayerTransactEvent](/payments-javadoc/com/nftworlds/wallet/event/PlayerTransactEvent.html)
+### <a target="_blank" href="/payments-javadoc/com/nftworlds/wallet/event/PlayerTransactEvent.html">PlayerTransactEvent</a>
 Listen for this event to detect completed player-to-server transactions.
 
-### [PeerToPeerPayEvent](/payments-javadoc/com/nftworlds/wallet/event/PeerToPeerPayEvent.html)
+### <a href="/payments-javadoc/com/nftworlds/wallet/event/PeerToPeerPayEvent.html" target="_blank">PeerToPeerPayEvent</a>
 Listen for this event to detect completed peer-to-peer transactions.
 
-These are just the most important classes, **please explore the [auto-generated Javadocs](/payments-javadoc/index.html) for complete reference documentation**.
+These are just the most important classes, **please explore the <a target="_blank" href="/payments-javadoc/index.html">auto-generated Javadocs</a> for complete reference documentation**.
