@@ -91,6 +91,6 @@ public class PlayerTransactEventListener implements Listener {
 
 If you want to test live payments, you need to connect your wallet that will spend $WRLD to your Minecraft account for NFT Worlds. You can do that through your NFT Worlds account page: https://nftworlds.com/login
 
-Connecting your wallet allows the NFT Worlds ecosystem to globally recognize your player UUID and the wallet address(es) associated with it. This is how payment receipt & the target player who paid is determined.
+Connecting your wallet allows the NFT Worlds ecosystem to globally recognize your player UUID and the wallet address(es) associated with it. This is how payment receipt & the target player who paid is determined by the wrld payments api.
 
 
