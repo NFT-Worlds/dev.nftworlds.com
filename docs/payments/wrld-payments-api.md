@@ -13,30 +13,28 @@ The [WRLD Payments API](https://github.com/NFT-Worlds/WRLD-Payments-API) provide
 ## Plugin integration
 This section assumes you've already [set up a Spigot plugin using IntelliJ](https://www.spigotmc.org/wiki/creating-a-blank-spigot-plugin-in-intellij-idea/).
 
-### Download the latest release
-
-Navigate to https://github.com/NFT-Worlds/WRLD-Payments-API/releases and download the latest `wrld-payments-api` .jar file
-
-### Add the library to your project
-Create a `libs` folder in the project's root folder (the same folder where build.gradle/pom.xml is). Then, copy the downloaded file into the folder. Afterwards, your project structure should look roughly like this:
-
-![showing the jarfile correctly placed in resources](/img/wrld-payments-api-library.png)
-
 ### Include the library with the build
 
 #### Maven
 
-Open `pom.xml`. Add a new entry under `<dependencies>` like so:
+Open `pom.xml`. Add new entries under `<repositories>` and `<dependencies>` like so:
 ```xml
+<repositories>
+...
+
+    <repository>
+        <id>worldql-partners</id>
+        <url>https://maven.worldql.com/releases</url>
+    </repository>
+</repositories>
+
 <dependencies>
 ...
 
     <dependency>
         <groupId>com.nftworlds</groupId>
         <artifactId>wrld-payments-api</artifactId>
-        <version>1.0</version>
-        <scope>system</scope>
-        <systemPath>${project.basedir}/libs/wrld-payments-api-1.0-shaded.jar</systemPath>
+        <version>0.0.1</version>
     </dependency>
 
 </dependencies>
@@ -44,28 +42,20 @@ Open `pom.xml`. Add a new entry under `<dependencies>` like so:
 
 #### Gradle
 
-Open `build.gradle`. Append to `dependencies` clause like so:
+Open `build.gradle`. Append to `repositories` and `dependencies` clauses like so:
 
 ```groovy
+repositories: {
+    maven {
+        url "https://maven.worldql.com/release"
+    }
+}
 dependencies {
     ...
     
-    compileOnly files('libs/wrld-payments-api-1.0-shaded.jar')
+    compileOnly 'com.nftworlds:wrld-payments-api:0.0.1'
 }
 ```
-
-Finally, refresh the buildscript in IntelliJ like so:
-
-![refreshing gradle buildscript](/img/wrld-payments-api-refresh.png)
-
-:::tip
-
-You can also use [GitHub's Maven repository](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry) instead of manually including the jarfile.
-However, GitHub Packages requires authentication (even for public packages) which can be extremely inconvenient.
-
-We'll be uploading wrld-payments-api to a public repository ASAP to improve this experience.
-
-:::
 
 ### Declare dependency in plugin.yml
 

@@ -17,7 +17,8 @@ The [WRLD Commands Plugin](https://github.com/NFT-Worlds/wrld-payment-tester-plu
 ### Viewing pending transactions 
 **Usage**: /listrequests
 
-For example, if your world has three pending requests with values 25, 0.25, and 2.0 WRLD the output of this command would display: 
+For example, if your world has three pending requests with values 25, 0.25, and 2.0 WRLD the output of this command would display:
+
 ![listrequests output](/img/listrequests.png)
 
 ### Manually confirming a transaction
