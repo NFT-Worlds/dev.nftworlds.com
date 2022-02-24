@@ -16,8 +16,8 @@ https://etherscan.io/address/0xD5d86FC8d5C0Ea1aC1Ac5Dfab6E529c9967a45E9
 **Ethereum NFT World Staking / Rental Escrow (Verified)**:
 https://etherscan.io/address/0x44f86C0786CCbaA3c0E61278f9889c873C8848C9
 
-**Ethereum NFT World Rentals (Pending Verification)**:
-https://etherscan.io/address/0x0d5c54b00685dc1b4424860f235c89d9e07599ad
+**Ethereum NFT World Rentals (Verified)**:
+https://etherscan.io/address/0xD9d3B97437e164c22c92F51B5e428B5aEFD72B0E
 
 **Polygon $WRLD (Verified)**:
 https://polygonscan.com/address/0xD5d86FC8d5C0Ea1aC1Ac5Dfab6E529c9967a45E9
