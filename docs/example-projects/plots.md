@@ -32,8 +32,6 @@ commands:
     description: Buy the plot you're standing on.
     usage: /buyplot
     default: true
-
-
 ```
 
 ## Transaction payload
