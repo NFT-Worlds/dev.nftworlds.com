@@ -8,7 +8,7 @@ This article will describe the lifecycle of a transaction as it's created and pr
 
 ## Creating plugin, initializing wallet
 
-```js
+```java
 public class WRLDPaymentsCommands extends JavaPlugin {
     private static WRLDPaymentsCommands plugin;
     private static WalletAPI wallet;
@@ -31,20 +31,27 @@ public class WRLDPaymentsCommands extends JavaPlugin {
 }
 ```
 
-## Defining transaction types
-Create a new enumerable to store your different transaction types:
-```js
-public enum ExampleTransactionType {
-    PLAYER_BUY_APPLE_FROM_WORLD,
-    PLAYER_BUY_XP_FROM_WORLD,
+## Defining transaction types and payloads
+Transactions are defined by a payload class which is automatically associated with the transaction and sent back to the server when the player completes payment. Payload classes serve two purposes:
+1. They allow the server to differentiate between multiple transaction types.
+2. Developers can store any arbitrary data they want and associate it with their transaction.
+
+```java
+public class PlayerBuyItemPayload {
+    public ItemStack items;
+
+    public PlayerBuyItemPayload(ItemStack items) {
+        this.items = items;
+    }
 }
 ```
-Note: these are the example transactions included in the [WRLD Commands Plugin](https://github.com/NFT-Worlds/wrld-payment-tester-plugin).
 
 ## Creating a payment request
-```js
-WRLDPaymentsCommands.getPayments().getNFTPlayer(player).requestWRLD(
-    25, Network.POLYGON, ExampleTransactionType.PLAYER_BUY_APPLE_FROM_WORLD.toString()
+```java
+PlayerBuyItemPayload payload = new PlayerBuyItemPayload(new ItemStack(Material.APPLE, 64));
+double price = 15.0;
+WRLDShopkeeperPlugin.getPayments().getNFTPlayer(player).requestWRLD(
+        price, Network.POLYGON, "Purchasing an apple", payload
 );
 ```
 <a href="/payments-javadoc/com/nftworlds/wallet/objects/NFTPlayer.html" target="_blank">Javadocs for this example</a>
@@ -52,37 +59,15 @@ WRLDPaymentsCommands.getPayments().getNFTPlayer(player).requestWRLD(
 ## Writing a transaction handler
 
 Incoming transactions are processed by a Spigot event handler like the one below:
-```js
-import com.nftworlds.wallet.event.PlayerTransactEvent;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.inventory.ItemStack;
-
+```java
 public class PlayerTransactEventListener implements Listener {
+
     @EventHandler
-    public void onPlayerTransactEvent(PlayerTransactEvent event) {
-        WRLDPaymentsCommands.getInstance().getLogger().info(event.getReason() + " exe");
-        try {
-            ExampleTransactionType type = ExampleTransactionType.valueOf(event.getReason());
-            switch (type) {
-                case PLAYER_BUY_APPLE_FROM_WORLD -> playerBuyAppleFromWorld(event);
-                case PLAYER_BUY_XP_FROM_WORLD -> playerBuyXPFromWorld(event);
-            }
-        } catch (IllegalArgumentException e) {
-            WRLDPaymentsCommands.getInstance().getLogger().warning("Received transaction type not in transaction type enum.");
+    public void onPlayerTransact(PlayerTransactEvent<?> e) {
+        if (e.getPayload() instanceof PlayerBuyItemPayload payload) {
+            e.getPlayer().sendMessage("Transaction complete!");
+            e.getPlayer().getInventory().addItem(payload.items);
         }
-    }
-
-    private void playerBuyAppleFromWorld(PlayerTransactEvent event) {
-        event.getPlayer().getInventory().addItem(new ItemStack(Material.APPLE));
-        event.getPlayer().sendMessage(ChatColor.GOLD + "Purchase complete! Enjoy your apple!");
-    }
-
-    private void playerBuyXPFromWorld(PlayerTransactEvent event) {
-        event.getPlayer().giveExp(1000);
-        event.getPlayer().sendMessage(ChatColor.GOLD + "Purchase complete! You've gained some XP.");
     }
 }
 ```

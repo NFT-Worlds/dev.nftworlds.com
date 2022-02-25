@@ -63,7 +63,7 @@ repositories: {
 dependencies {
     ...
     
-    compileOnly 'com.nftworlds:wrld-payments-api:0.0.1'
+    compileOnly 'com.nftworlds:wrld-payments-api:0.1.0'
 }
 ```
 
