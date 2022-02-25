@@ -11,7 +11,17 @@ The [WRLD Payments API](https://github.com/NFT-Worlds/WRLD-Payments-API) provide
 - Recieve information about completed transactions
 
 ## Plugin integration
-This section assumes you've already [set up a Spigot plugin using IntelliJ](https://www.spigotmc.org/wiki/creating-a-blank-spigot-plugin-in-intellij-idea/).
+This section assumes you've already [set up a Spigot plugin using IntelliJ and Maven](https://www.spigotmc.org/wiki/creating-a-plugin-with-maven-using-intellij-idea/).
+
+**Important: you must replace the Spigot API in your `pom.xml` with the Paper API**. If you have an `org.spigotmc:spigot-api` dependency, replace it with this:
+```xml
+<dependency>
+    <groupId>io.papermc.paper</groupId>
+    <artifactId>paper-api</artifactId>
+    <version>1.17.1-R0.1-SNAPSHOT</version>
+    <scope>provided</scope>
+</dependency>
+```
 
 ### Include the library with the build
 
@@ -34,7 +44,7 @@ Open `pom.xml`. Add new entries under `<repositories>` and `<dependencies>` like
     <dependency>
         <groupId>com.nftworlds</groupId>
         <artifactId>wrld-payments-api</artifactId>
-        <version>0.0.1</version>
+        <version>0.1.0</version>
     </dependency>
 
 </dependencies>
