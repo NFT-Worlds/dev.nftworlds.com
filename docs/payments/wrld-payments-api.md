@@ -81,6 +81,33 @@ The resulting `plugin.yml` should look like so:
 
 ![plugin.yml example](/img/wrld-payments-api-pluginyml.png)
 
+## Paying players with server-to-player transactions
+If you want to reward players for achieving victory in your world, you can use the `Wallet.payPlayer` method.
+
+First, you'll need to configure your `config.yml` with a `server_wallet_private_key`:
+```yml
+server_wallet_private_key: "0xYourPrivateKey"
+```
+
+You will see a warning in your server logs:
+```
+[14:27:04 WARN]: A private key has been set in the plugin config! Only install plugins you trust. 
+```
+
+Now, you can use the Java API to send payments to players:
+```java
+Player payee = Bukkit.getPlayer(someUUID);
+double amount = Double.parseDouble("0.25");
+String reason = "Congrats on completing the parkour challenge!";
+
+WRLDPaymentsCommands.getPayments().getNFTPlayer(payee)
+    .getPrimaryWallet().payWRLD(amount, Network.POLYGON, reason);
+```
+
+The player will be immediately notified they have an incoming pending transactions. Within a minute, the player will be notified of the successful incoming payment alongside a clickable link to a block explorer. 
+![Successful payment chat message](/img/successfulpayment.png)
+
+
 ## Reference
 
 Click on any header to go to the Javadocs for that class. 
