@@ -4,6 +4,7 @@ sidebar_position: 1
 
 # ERC721 Token API
 
+## About
 The [WRLD Payments API](http://localhost:3000/payments/wrld-payments-api) offers convenience functions for getting information about a player's NFT collection. These APIs have a variety of use-cases:
 - Offer exclusive perks to players who own an item in a certain collection.
 - Grant players one-of-a-kind items based on ownership of a specific item ID.
