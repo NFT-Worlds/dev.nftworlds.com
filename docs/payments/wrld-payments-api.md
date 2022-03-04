@@ -44,7 +44,7 @@ Open `pom.xml`. Add new entries under `<repositories>` and `<dependencies>` like
     <dependency>
         <groupId>com.nftworlds</groupId>
         <artifactId>wrld-payments-api</artifactId>
-        <version>0.1.0</version>
+        <version>0.1.6</version>
     </dependency>
 
 </dependencies>
@@ -63,7 +63,7 @@ repositories: {
 dependencies {
     ...
     
-    compileOnly 'com.nftworlds:wrld-payments-api:0.1.0'
+    compileOnly 'com.nftworlds:wrld-payments-api:0.1.6'
 }
 ```
 
