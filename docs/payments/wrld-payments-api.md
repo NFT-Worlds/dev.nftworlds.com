@@ -128,14 +128,14 @@ double playerBalance = wallet.getCustomPolygonBalances().get("0xYourTokenContrac
 
 To get the underlying web3j wrapper for direct access to the smart contract, use the following:
 ```java
-ERC20 myCustomToken = Wallet.getCustomEthereumTokenWrappers().get("0xYourTokenContractAddress");
+ERC20 myCustomToken = wallet.getCustomEthereumTokenWrappers().get("0xYourTokenContractAddress");
 // access any of the standard web3j ERC20 contract features
 myCustomToken.transfer("0xSomeone", new BigInteger("10000"));
 ```
 :::info
 Currently, these API methods load custom ERC20 contracts using the server's default private key (the same one used for WRLD). When calling the `transfer` function on the underlying contract, be aware that you are not transferring player funds but server funds.
 
-This API will be updated to allow sending arbitrary ERC20 tokens with a convenience method that abstracts the contract wrapper. If you'd like this feature expedited, let us know!
+This API will be updated to allow sending arbitrary ERC20 tokens with a convenience method that abstracts the contract wrapper. If you'd like this feature expedited, let us know! If you need more flexibility, we recommend using [the web3j ERC20 wrapper directly](https://docs.web3j.io/4.8.7/smart_contracts/contracts_supported_by_web3j/#eip20).
 :::
 
 ## Reference
