@@ -114,6 +114,19 @@ polygon_https_rpc: https://polygon-mainnet.g.alchemy.com/v2/ZZhQHYourAPIKeyrIy9o
 ethereum_https_rpc: https://eth-mainnet.alchemyapi.io/v2/BJKYourAPIKeyExYsd
 ```
 
+## Getting balances for custom ERC20 tokens
+If you want to get a user's balance for an ERC20 token that isn't WRLD, we have an API method to make that easy:
+```java
+Wallet playerWallet = WRLDPaymentsCommands.getPayments().getNFTPlayer(examplePlayer);
+// This is a blocking call and will fetch and update player balances before moving to the next line
+// Be sure not to run this lookup in the main thread
+wallet.refreshERC20Balance(Network.POLYGON, "0xYourTokenContractAddress");
+// Now, you can access the player's balance through a hashmap member of the wallet
+double playerBalance = wallet.getCustomPolygonBalances().get("0xYourTokenContractAddress");
+```
+:::note
+This API will be updated to allow sending arbitrary ERC20 tokens with a convenience method that abstracts the contract wrapper. If you'd like this feature expedited, let us know!
+:::
 
 ## Reference
 
