@@ -22,6 +22,9 @@ https://etherscan.io/address/0x05FcDDc1d68E718eB0be0fd2716724c37B0ce282
 **Polygon $WRLD (Verified)**:
 https://polygonscan.com/address/0xD5d86FC8d5C0Ea1aC1Ac5Dfab6E529c9967a45E9
 
+**Polygon $WRLD Batch Transfers (Verified)**:
+https://polygonscan.com/address/0x41f98a6da17715980c09d863dca2b0171ad98bc3
+
 **Polygon Gasless Forwarder (Verified)**:
 https://polygonscan.com/address/0x7fE3AEDfC76D7C6DD84b617081A9346DE81236DC
 
