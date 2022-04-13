@@ -110,8 +110,8 @@ The player will be immediately notified they have an incoming pending transactio
 ## Configuring Ethereum and Polygon RPC endpoints
 In order to use the WRLD Payments API, you must obtain HTTPS RPC endpoints for both Ethereum and Polygon. If you don't host your own node, we recommend [Alchemy](https://www.alchemy.com/) or [Infura](https://infura.io/). These endpoints can be set using `polygon_https_rpc` and `ethereum_https_rpc` in `plugins/WRLDPaymentsAPI/config.yml`. A correct configuration looks like this:
 ```yml
-polygon_https_rpc: https://polygon-mainnet.g.alchemy.com/v2/ZZhQHYourAPIKeyrIy9o5XT9M
-ethereum_https_rpc: https://eth-mainnet.alchemyapi.io/v2/BJKYourAPIKeyExYsd
+polygon_https_rpc: https://polygon-mainnet.g.alchemy.com/v2/YourAPIKeyHere
+ethereum_https_rpc: https://eth-mainnet.alchemyapi.io/v2/YourAPIKeyHere
 ```
 
 ## Getting balances for custom ERC20 tokens
