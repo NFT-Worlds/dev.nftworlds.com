@@ -108,11 +108,16 @@ The player will be immediately notified they have an incoming pending transactio
 ![Successful payment chat message](/img/successfulpayment.png)
 
 ## Configuring Ethereum and Polygon RPC endpoints
-In order to use the WRLD Payments API, you must obtain HTTPS RPC endpoints for both Ethereum and Polygon. If you don't host your own node, we recommend [Alchemy](https://www.alchemy.com/) or [Infura](https://infura.io/). These endpoints can be set using `polygon_https_rpc` and `ethereum_https_rpc` in `plugins/WRLDPaymentsAPI/config.yml`. A correct configuration looks like this:
+In order to use the WRLD Payments API, you must obtain HTTPS RPC endpoints for both Ethereum and Polygon. If you don't host your own node, we recommend [Alchemy](https://www.alchemy.com/). These endpoints can be set using `polygon_https_rpc` and `ethereum_https_rpc` in `plugins/WRLDPaymentsAPI/config.yml`. A correct configuration looks like this:
 ```yml
 polygon_https_rpc: https://polygon-mainnet.g.alchemy.com/v2/YourAPIKeyHere
 ethereum_https_rpc: https://eth-mainnet.alchemyapi.io/v2/YourAPIKeyHere
 ```
+:::tip
+If you get the error `Invalid request: method not supported eth_newFilter` be sure you're using an endpoint provided by **Alchemy API**. Infura has compatibility issues with our plugin due to not providing certain functionality over HTTPS.
+:::
+
+
 
 ## Getting balances for custom ERC20 tokens
 If you want to get a user's balance for an ERC20 token that isn't WRLD, we have an API method to make that easy:
