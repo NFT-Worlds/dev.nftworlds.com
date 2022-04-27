@@ -57,7 +57,7 @@ Open `build.gradle`. Append to `repositories` and `dependencies` clauses like so
 ```groovy
 repositories: {
     maven {
-        url "https://maven.worldql.com/release"
+        url "https://maven.worldql.com/releases"
     }
 }
 dependencies {
