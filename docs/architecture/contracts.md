@@ -22,6 +22,9 @@ https://etherscan.io/address/0x05FcDDc1d68E718eB0be0fd2716724c37B0ce282
 **Ethereum NFT Worlds Whitelist Tokens (Verified)**:
 https://etherscan.io/address/0x52a0ae79FAcf56421977b19bF1052fDf8B1c5C16
 
+**Ethereum NFT Worlds Genesis Avatars ERC721 (Verified)**:
+https://etherscan.io/address/0x05745e72fb8b4a9b51118a168d956760e4a36444
+
 **Polygon $WRLD (Verified)**:
 https://polygonscan.com/address/0xD5d86FC8d5C0Ea1aC1Ac5Dfab6E529c9967a45E9
 
